@@ -6,7 +6,6 @@ import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-// import { useNavigate } from 'react-router-dom';
 
 
 function Contact() {
@@ -17,10 +16,8 @@ function Contact() {
     let [city, setcity] = useState();
     let [gender, setgender] = useState();
     let [address, setaddress] = useState();
-    // const navigate = useNavigate();
 
     const passdata = () => {
-        // e.preventDefult();
         axios.post('http://localhost/crud/contact.php', {
             name: name,
             email: email,
@@ -68,8 +65,8 @@ function Contact() {
                 </Form.Group>
 
                 <Form.Label>City</Form.Label>
-                <Form.Select className='mb-3'>
-                    <option selected disabled onChange={(e) => setcity(e.target.value)}>Select city</option>
+                <Form.Select className='mb-3' onChange={(e) => setcity(e.target.value)}>
+                    <option selected disabled>Select city</option>
                     <option value="surat">Surat</option>
                     <option value="rajkot">Rajkot</option>
                     <option value="mumbai">Mumbai</option>
@@ -77,10 +74,10 @@ function Contact() {
 
                 <Form.Label>Gender</Form.Label>
                 <div className='d-flex mb-2'>
-                    <Form.Check type="radio" className='me-2' name="femal" onChange={(e) => setgender(e.target.value)} />
+                    <Form.Check type="radio" className='me-2' name="gender" value='female' onChange={(e) => setgender(e.target.value)} />
                     <Form.Label className='me-4'>Femal</Form.Label>
 
-                    <Form.Check type="radio" className='me-2' name="femal" onChange={(e) => setgender(e.target.value)} />
+                    <Form.Check type="radio" className='me-2' name="gender" value='male' onChange={(e) => setgender(e.target.value)} />
                     <Form.Label className='me-4'>Male</Form.Label>
 
                 </div>

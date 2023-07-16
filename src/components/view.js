@@ -49,7 +49,7 @@ function View() {
                 <Container>
                     {/* <Navbar.Brand href=""></Navbar.Brand> */}
                     <Nav className="me-auto">
-                        <Nav.Link href="h">Log out</Nav.Link>   
+                        <Nav.Link href="/">Log out</Nav.Link>   
                     </Nav>
                 </Container>
             </Navbar>
@@ -57,7 +57,7 @@ function View() {
 
             <Container>
                 <h1 className='text-center mt-3 mb-4'>VIEW CONTACT INFO</h1>
-                <Table striped className='text-center  m-auto' style={{ width: "50rem" }}>
+                <Table striped='columns' bordered className='text-center border border-dark m-auto table table-success'>
                     <thead>
                         <tr>
                             <th>Id</th>

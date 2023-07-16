@@ -10,7 +10,7 @@ function Login() {
     let [Err, setErr] = useState();
 
     const passdata = () => {
-    
+
         if (!email || !password) {
             setErr("All field are required for log in !");
         } else {
@@ -18,15 +18,13 @@ function Login() {
                 email: email, password: password
             })
                 .then(response => {
-                    if(response.data === 'Success')
-                    {
+                    if (response.data === 'Success') {
                         window.location = '/contact';
-                    }else
-                    {
+                    } else {
                         setErr('Enter correct email and password !');
                     }
                 })
-                
+
         }
     }
     return (
@@ -49,7 +47,7 @@ function Login() {
                     <div className='d-flex justify-content-center'>
                         <button className="btn btn-primary me-5" onClick={passdata}>Log in</button>
                         <Link to="registration">Click for register</Link>
-                        
+
                     </div>
                 </div>
             </form>
